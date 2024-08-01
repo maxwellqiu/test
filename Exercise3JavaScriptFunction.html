@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise3 JavaScript Functions</title>
+  <script src="Exercise3JavaScriptFunctions.js"></script>
+</head>
+<body>
+<h1>JavaScript Functions</h1>
+<p id="func1">Sum of Array: </p>
+<p id="func2">Maximum Number: </p>
+<p id="func3">Add only numbers: </p>
+<p id="func4">Get Digits: </p>
+<p id="func5">Reversed String: </p>
+<p id="func6">Current Date: </p>
+
+<script>
+  // Assuming the functions are correctly defined in the linked JS file.
+  document.getElementById('func1').innerText += addNumbers([1, 2, 3, 4]); // Example for array of numbers
+  document.getElementById('func2').innerText += findMaxNumber(1, 2, 3, 4, 100);
+  document.getElementById('func3').innerText += addOnlyNumbers([4, 5, "3.0 birds", true, "birds2"]);
+  document.getElementById('func4').innerText += getDigits("abc123def45");
+  document.getElementById('func5').innerText += reverseString("See you later!");
+  document.getElementById('func6').innerText += getCurrentDate();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Books Online</title>
+  <link rel="stylesheet" href="Q4Style.css">
+</head>
+<body>
+<h1>Order Books Online</h1>
+<form action="#" onsubmit="return false">
+  <fieldset>
+    <table>
+      <tr>
+        <th>Book</th>
+        <th>Quantity</th>
+        <th>Price</th>
+      </tr>
+      <tr>
+        <td><label for="basicWeb">Basic Web Programming</label></td>
+        <td><input type="text" name="basicWeb" id="basicWeb"></td>
+        <td>$19.99</td>
+      </tr>
+      <tr>
+        <td><label for="introPHP">Intro to PHP</label></td>
+        <td><input type="text" name="introPHP" id="introPHP"></td>
+        <td>$86.00</td>
+      </tr>
+      <tr>
+        <td><label for="advJQuery">Advanced jQuery</label></td>
+        <td><input type="text" name="advJQuery" id="advJQuery"></td>
+        <td>$55.00</td>
+      </tr>
+      <tr>
+        <td colspan="3" style="text-align: left;">
+          <input type="submit" value="Calculate the Order" onclick="processOrder()">
+        </td>
+      </tr>
+    </table>
+  </fieldset>
+</form>
+<p id="orderDetails"></p>
+<script src="OrderProcessing.js"></script>
+</body>
+</html>

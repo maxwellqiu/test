@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gravitational Waves Slide Show</title>
+</head>
+<body>
+<h2>Gravitational waves have been detected for the first time</h2>
+
+<div>
+  <img id="slideshow-img" alt="Slideshow Image" src="img-1.webp" height="549" width="976">
+  <br>
+  <a href="#" style="margin-right:5px;" onclick="showPrevImage()">Previous</a>
+  <a href="#" onclick="showNextImage()">Next</a>
+</div>
+<div>
+  <p id="slideshow-caption">Gravitational waves have been detected for the first time</p>
+</div>
+
+<script>
+  window.onload = function () {
+    const commonCaption = 'The first direct detection of gravitational wave is without doubt one of the most remarkable breakthroughs of our time. The Advanced LIGO laboratories in the US states of Washington and Louisiana have traced the warping of space from the merger of two black holes about 1.3 billion light-years from Earth.';
+
+    // Array of images using a loop to populate similar entries
+    const images = Array.from({length: 4}, (v, i) => ({
+      src: `img-${i + 1}.webp`, // Dynamic image source path
+      caption: commonCaption   // Common caption for all images
+    }));
+
+    let currentImage = 0;
+    const imgElement = document.getElementById('slideshow-img');
+    const captionElement = document.getElementById('slideshow-caption');
+
+    function updateImage() {
+      const image = images[currentImage];
+      imgElement.src = image.src;
+      captionElement.textContent = image.caption;
+    }
+
+    window.showNextImage = function () {
+      currentImage = (currentImage + 1) % images.length;
+      updateImage();
+    };
+
+    window.showPrevImage = function () {
+      currentImage = (currentImage - 1 + images.length) % images.length;
+      updateImage();
+    };
+
+    updateImage(); // Initialize the slideshow with the first image
+  };
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercise2 Print JavaScript Array</title>
+  <style>
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+      text-align: left;
+    }
+
+  </style>
+</head>
+<body>
+<header>
+  <h1>JavaScript Array Exercises</h1>
+</header>
+<main>
+  <h2>Print the elements of an array using toString()</h2>
+  <p id="using-toString"></p>
+
+  <h2>Print the elements of an array using join()</h2>
+  <p id="using-join"></p>
+
+  <h2>Print the elements in the format of index: value</h2>
+  <ul id="index-value"></ul>
+</main>
+<script>
+  const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+  // Print using toString()
+  document.getElementById('using-toString').textContent = fruits.toString();
+
+  // Print using join()
+  document.getElementById('using-join').textContent = fruits.join('&');
+
+  const list = document.getElementById('index-value');
+  fruits.forEach((fruit, index) => {
+    const listItem = document.createElement('li');
+    listItem.textContent = `${index}: ${fruit}`;
+    list.appendChild(listItem);
+  });
+</script>
+</body>
+</html>
